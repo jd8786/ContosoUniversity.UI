@@ -1,7 +1,11 @@
-mat-toolbar span{
+mat-toolbar span {
     padding-right: 1rem;
 }
 
-.active{
+.active {
     background-color:royalblue;
+}
+
+div {
+    margin-left: 1rem;
 }
