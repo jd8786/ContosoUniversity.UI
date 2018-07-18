@@ -8,6 +8,7 @@ import { InstructorsModule } from './instructors/instructors.module';
 import { DepartmentsModule } from './departments/departments.module';
 import { SharedModule } from './shared/shared.module';
 import { CoreModule } from './core/core.module';
+import { StudentsService } from './students/services/students.service';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,7 @@ import { CoreModule } from './core/core.module';
     InstructorsModule,
     DepartmentsModule,
   ],
-  providers: [],
+  providers: [StudentsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
