@@ -9,7 +9,7 @@ import { ApiResponseOfStudents } from '../../shared/models/api-response-of-stude
   providedIn: 'root'
 })
 export class StudentsService {
-  public students$: BehaviorSubject<Student[]>;
+  public students$: BehaviorSubject<Student[]> = new BehaviorSubject([]);
 
   constructor(private http: HttpClient) { }
 

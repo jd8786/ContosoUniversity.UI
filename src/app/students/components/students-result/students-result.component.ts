@@ -9,7 +9,9 @@ import { Student } from '../../../shared/models/student';
   styleUrls: ['./students-result.component.css']
 })
 export class StudentsResultComponent implements OnInit {
-  public students: Student[];
+  public students: Student[] = [];
+  public displayedColumns: string[] = ['lastName', 'firstMidName', 'enrollmentDate'];
+  public dataSource = this.students;
 
   constructor(private studentService: StudentsService) { }
 

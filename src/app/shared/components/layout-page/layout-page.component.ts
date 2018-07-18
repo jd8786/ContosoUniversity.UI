@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import { StudentsService } from '../../../students/services/students.service';
+
 @Component({
   selector: 'app-layout-page',
   templateUrl: './layout-page.component.html',
@@ -7,9 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LayoutPageComponent implements OnInit {
 
-  constructor() { }
+  constructor(private studentService: StudentsService) { }
 
   ngOnInit() {
   }
 
+  public getStudents() {
+    this.studentService.getStudents();
+  }
 }

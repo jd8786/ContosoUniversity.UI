@@ -1,3 +1,19 @@
-<p>
-  students-result works!
-</p>
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+  <ng-container matColumnDef="lastName">
+    <th mat-header-cell *matHeaderCellDef>LastName</th>
+    <td mat-cell *matCellDef="let row"> {{row.lastName}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="firstMidName">
+    <th mat-header-cell *matHeaderCellDef>FirstMidName</th>
+    <td mat-cell *matCellDef="let row"> {{row.firstMidName}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="enrollmentDate">
+    <th mat-header-cell *matHeaderCellDef>EnrollmentDate</th>
+    <td mat-cell *matCellDef="let row"> {{element.enrollmentDate}} </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
