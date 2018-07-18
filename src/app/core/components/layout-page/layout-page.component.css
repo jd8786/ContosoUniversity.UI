@@ -1,0 +1,7 @@
+mat-toolbar span{
+    padding-right: 1rem;
+}
+
+.active{
+    background-color:royalblue;
+}
