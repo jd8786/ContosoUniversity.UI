@@ -11,7 +11,7 @@
 
   <ng-container matColumnDef="enrollmentDate">
     <th mat-header-cell *matHeaderCellDef>EnrollmentDate</th>
-    <td mat-cell *matCellDef="let row"> {{element.enrollmentDate}} </td>
+    <td mat-cell *matCellDef="let row"> {{row.enrollmentDate}} </td>
   </ng-container>
 
   <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>

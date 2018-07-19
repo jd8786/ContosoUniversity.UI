@@ -13,7 +13,7 @@ export class StudentsService {
 
   constructor(private http: HttpClient) { }
 
-  getStudents() {
+  public getStudents() {
     (<Observable<ApiResponseOfStudents>>this.http.get('http://localhost:23263/api/students'))
       .subscribe(apiResponse => this.students$.next(apiResponse.data));
   }
