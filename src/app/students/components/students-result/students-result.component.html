@@ -1,19 +1,27 @@
-<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
-  <ng-container matColumnDef="lastName">
-    <th mat-header-cell *matHeaderCellDef>LastName</th>
-    <td mat-cell *matCellDef="let row"> {{row.lastName}} </td>
-  </ng-container>
+<mat-form-field>
+  <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
+</mat-form-field>
 
-  <ng-container matColumnDef="firstMidName">
-    <th mat-header-cell *matHeaderCellDef>FirstMidName</th>
-    <td mat-cell *matCellDef="let row"> {{row.firstMidName}} </td>
-  </ng-container>
+<div class="mat-elevation-z8">
+  <table mat-table [dataSource]="dataSource" matSort>
+    <ng-container matColumnDef="lastName">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>LastName</th>
+      <td mat-cell *matCellDef="let row"> {{row.lastName}} </td>
+    </ng-container>
 
-  <ng-container matColumnDef="enrollmentDate">
-    <th mat-header-cell *matHeaderCellDef>EnrollmentDate</th>
-    <td mat-cell *matCellDef="let row"> {{row.enrollmentDate}} </td>
-  </ng-container>
+    <ng-container matColumnDef="firstMidName">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>FirstMidName</th>
+      <td mat-cell *matCellDef="let row"> {{row.firstMidName}} </td>
+    </ng-container>
 
-  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-</table>
+    <ng-container matColumnDef="enrollmentDate">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>EnrollmentDate</th>
+      <td mat-cell *matCellDef="let row"> {{row.enrollmentDate}} </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+
+  <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+</div>
