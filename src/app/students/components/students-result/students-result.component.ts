@@ -24,8 +24,21 @@ export class StudentsResultComponent implements OnInit {
     this.studentService.students$
       .subscribe(students => {
         this.dataSource = new MatTableDataSource<Student>(students);
+        this.dataSource.filterPredicate = this.filterStudentsByNames;
         this.dataSource.sort = this.sort;
         this.dataSource.paginator = this.paginator;
       });
+  }
+
+  private filterStudentsByNames(data: Student, filter: string): boolean {
+    return data.firstMidName.indexOf(filter) >= 0 || data.lastName.indexOf(filter) >= 0;
+  }
+
+  public applyFilter(filterValue: string) {
+    this.dataSource.filter = filterValue.trim().toLocaleLowerCase();
+
+    if (this.dataSource.paginator) {
+      this.dataSource.paginator.firstPage();
+    }
   }
 }
