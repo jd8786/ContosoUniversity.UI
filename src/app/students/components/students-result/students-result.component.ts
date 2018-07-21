@@ -20,6 +20,7 @@ export class StudentsResultComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.studentService.getStudents();
     this.studentService.students$
       .subscribe(students => {
         this.dataSource = new MatTableDataSource<Student>(students);

@@ -6,6 +6,7 @@ import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material';
 import { MatSortModule } from '@angular/material';
 import { MatFormFieldModule } from '@angular/material';
+import { MatInputModule } from '@angular/material';
 
 export const importExport = [
   MatToolbarModule,
@@ -13,7 +14,8 @@ export const importExport = [
   MatTableModule,
   MatPaginatorModule,
   MatSortModule,
-  MatFormFieldModule
+  MatFormFieldModule,
+  MatInputModule
 ];
 @NgModule({
   imports: [
