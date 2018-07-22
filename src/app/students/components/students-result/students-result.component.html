@@ -1,22 +1,35 @@
+<h2>Students</h2>
+<p>
+  <a id="create" mat-button color="primary">Create New</a>
+</p>
 <mat-form-field>
-  <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Name">
+  <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Search By Name">
 </mat-form-field>
 
 <div class="mat-elevation-z8">
   <table mat-table [dataSource]="dataSource" matSort>
     <ng-container matColumnDef="lastName">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header>LastName</th>
+      <th mat-header-cell *matHeaderCellDef mat-sort-header class="tableHeader">LastName</th>
       <td mat-cell *matCellDef="let row"> {{row.lastName}} </td>
     </ng-container>
 
     <ng-container matColumnDef="firstMidName">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header>FirstMidName</th>
+      <th mat-header-cell *matHeaderCellDef mat-sort-header class="tableHeader">FirstMidName</th>
       <td mat-cell *matCellDef="let row"> {{row.firstMidName}} </td>
     </ng-container>
 
     <ng-container matColumnDef="enrollmentDate">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header>EnrollmentDate</th>
-      <td mat-cell *matCellDef="let row"> {{row.enrollmentDate}} </td>
+      <th mat-header-cell *matHeaderCellDef mat-sort-header class="tableHeader">EnrollmentDate</th>
+      <td mat-cell *matCellDef="let row"> {{row.enrollmentDate | date: "yyyy-MM-dd"}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="otherFunctions">
+      <th mat-header-cell *matHeaderCellDef></th>
+      <td mat-cell *matCellDef="let row">
+        <a mat-button color="primary">Edit</a>
+        <a mat-button color="primary">Details</a>
+        <a mat-button color="primary">Delete</a>
+      </td>
     </ng-container>
 
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>

@@ -10,7 +10,7 @@ import { Student } from '../../../shared/models/student';
   styleUrls: ['./students-result.component.css']
 })
 export class StudentsResultComponent implements OnInit {
-  public displayedColumns: string[] = ['lastName', 'firstMidName', 'enrollmentDate'];
+  public displayedColumns: string[] = ['lastName', 'firstMidName', 'enrollmentDate', 'otherFunctions'];
   public dataSource: MatTableDataSource<Student>;
 
   @ViewChild(MatSort) sort: MatSort;

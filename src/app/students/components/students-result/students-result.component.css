@@ -1,0 +1,9 @@
+#create {
+    padding-left: 0;
+}
+
+.tableHeader {
+    font-size: 0.9em;
+    color: #3f51b5;
+    font-weight: bold;
+}

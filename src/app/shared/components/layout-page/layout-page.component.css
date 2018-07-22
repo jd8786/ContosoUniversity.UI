@@ -6,6 +6,11 @@ mat-toolbar span {
     background-color:royalblue;
 }
 
-div {
-    margin-left: 1rem;
+#routeBody, mat-toolbar {
+    padding-left: 20%;
 }
+
+mat-toolbar-row {
+    padding: 0;
+}
+
