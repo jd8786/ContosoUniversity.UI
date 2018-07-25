@@ -31,7 +31,8 @@ export class StudentsResultComponent implements OnInit {
   }
 
   private filterStudentsByNames(data: Student, filter: string): boolean {
-    return data.firstMidName.indexOf(filter) >= 0 || data.lastName.indexOf(filter) >= 0;
+    filter = filter.toLowerCase();
+    return data.lastName.toLowerCase().indexOf(filter) >= 0 || data.firstMidName.toLowerCase().indexOf(filter) >= 0;
   }
 
   public applyFilter(filterValue: string) {
