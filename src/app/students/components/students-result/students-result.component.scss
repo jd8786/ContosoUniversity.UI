@@ -1,19 +1,21 @@
+@import "../../../core/themes/theme-variables";
+
 #create {
     padding-left: 0;
 }
 
 mat-header-cell {
     font-size: 0.9em;
-    color: #fff;
+    color: $white;
 }
 
 mat-header-row {
-    background-color: #3f51b5;
+    background-color: $primary;
 }
 
 p a, mat-cell a {
     padding-right: 2.5em;
-    color: #3f51b5;
+    color: $primary;
     cursor: pointer;
 }
 

@@ -7,7 +7,7 @@ import { Student } from '../../../shared/models/student';
 @Component({
   selector: 'app-students-result',
   templateUrl: './students-result.component.html',
-  styleUrls: ['./students-result.component.css']
+  styleUrls: ['./students-result.component.scss']
 })
 export class StudentsResultComponent implements OnInit {
   public displayedColumns: string[] = ['lastName', 'firstMidName', 'enrollmentDate', 'otherFunctions'];

@@ -1,9 +1,11 @@
+@import "../../../core/themes/theme-variables";
+
 mat-toolbar span {
     padding-right: 1rem;
 }
 
 .active {
-    background-color:royalblue;
+    background-color: $activeBottonBackgroundColor;
 }
 
 #routeBody, mat-toolbar {
