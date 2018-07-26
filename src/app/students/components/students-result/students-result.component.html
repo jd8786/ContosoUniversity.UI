@@ -1,38 +1,40 @@
-<h2>Students</h2>
-<p>
-  <a id="create" mat-button color="primary">Create New</a>
-</p>
-<mat-form-field>
-  <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Search By Name">
-</mat-form-field>
+<div style="width:40%">
+  <h2>Students</h2>
+  <p>
+    <a>Create New</a>
+  </p>
+  <mat-form-field>
+    <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Search By Name">
+  </mat-form-field>
 
-<table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z2">
-  <ng-container matColumnDef="lastName">
-    <th mat-header-cell *matHeaderCellDef mat-sort-header class="tableHeader">LastName</th>
-    <td mat-cell *matCellDef="let row"> {{row.lastName}} </td>
-  </ng-container>
+  <mat-table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z2">
+    <ng-container matColumnDef="lastName">
+      <mat-header-cell *matHeaderCellDef mat-sort-header class="tableHeader">LastName</mat-header-cell>
+      <mat-cell *matCellDef="let row"> {{row.lastName}} </mat-cell>
+    </ng-container>
 
-  <ng-container matColumnDef="firstMidName">
-    <th mat-header-cell *matHeaderCellDef mat-sort-header class="tableHeader">FirstMidName</th>
-    <td mat-cell *matCellDef="let row"> {{row.firstMidName}} </td>
-  </ng-container>
+    <ng-container matColumnDef="firstMidName">
+      <mat-header-cell *matHeaderCellDef mat-sort-header class="tableHeader">FirstMidName</mat-header-cell>
+      <mat-cell *matCellDef="let row"> {{row.firstMidName}} </mat-cell>
+    </ng-container>
 
-  <ng-container matColumnDef="enrollmentDate">
-    <th mat-header-cell *matHeaderCellDef mat-sort-header class="tableHeader">EnrollmentDate</th>
-    <td mat-cell *matCellDef="let row"> {{row.enrollmentDate | date: "yyyy-MM-dd"}} </td>
-  </ng-container>
+    <ng-container matColumnDef="enrollmentDate">
+      <mat-header-cell *matHeaderCellDef mat-sort-header class="tableHeader">EnrollmentDate</mat-header-cell>
+      <mat-cell *matCellDef="let row"> {{row.enrollmentDate | date: "yyyy-MM-dd"}} </mat-cell>
+    </ng-container>
 
-  <ng-container matColumnDef="otherFunctions">
-    <th mat-header-cell *matHeaderCellDef></th>
-    <td mat-cell *matCellDef="let row">
-      <a mat-button color="primary">Edit</a>
-      <a mat-button color="primary">Details</a>
-      <a mat-button color="primary">Delete</a>
-    </td>
-  </ng-container>
+    <ng-container matColumnDef="otherFunctions">
+      <mat-header-cell *matHeaderCellDef></mat-header-cell>
+      <mat-cell *matCellDef="let row">
+          <a color=" #3f51b5">Edit</a>
+          <a color=" #3f51b5">Details</a>
+          <a color="#3f51b5">Delete</a>
+      </mat-cell>
+    </ng-container>
 
-  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-</table>
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+  </mat-table>
 
-<mat-paginator showFirstLastButtons class="mat-elevation-z2" [pageSize]="10"></mat-paginator>
+  <mat-paginator showFirstLastButtons class="mat-elevation-z2" [pageSize]="10"></mat-paginator>
+</div>
