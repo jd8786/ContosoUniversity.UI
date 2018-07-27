@@ -7,11 +7,17 @@ import { StudentsResultComponent } from './students/components/students-result/s
 import { CoursesResultComponent } from './courses/components/courses-result/courses-result.component';
 import { InstructorsResultComponent } from './instructors/components/instructors-result/instructors-result.component';
 import { DepartmentsResultComponent } from './departments/components/departments-result/departments-result.component';
+import { PageNotFoundComponent } from './core/components/page-not-found/page-not-found.component';
 
 const ROUTES: Routes = [
   {
-    path: '',
+    path: 'home',
     component: HomeComponent
+  },
+  {
+    path: '',
+    redirectTo: '/home',
+    pathMatch: 'full'
   },
   {
     path: 'students',
@@ -31,7 +37,7 @@ const ROUTES: Routes = [
   },
   {
     path: '**',
-    redirectTo: ''
+    component: PageNotFoundComponent,
   }
 ];
 
