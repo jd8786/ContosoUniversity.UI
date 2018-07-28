@@ -5,7 +5,6 @@ import { StudentsService } from '../../services/students.service';
 import { Student } from '../../../shared/models/student';
 
 @Component({
-  selector: 'app-students-result',
   templateUrl: './students-result.component.html',
   styleUrls: ['./students-result.component.scss']
 })
