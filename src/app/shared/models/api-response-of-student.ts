@@ -1,7 +1,7 @@
 import { Student } from './student';
 
-export class ApiResponseOfStudents {
+export class ApiResponseOfStudent {
     isSuccess: Boolean;
     message: string;
-    students: Student[];
+    student: Student;
 }

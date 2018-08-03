@@ -4,9 +4,11 @@ import { Route, RouterModule } from '@angular/router';
 
 import { StudentsResultComponent } from './components/students-result/students-result.component';
 import { MaterialModule } from '../material/material.module';
+import { StudentDetailsComponent } from './components/student-details/student-details.component';
 
 const STUDENTSROUTES: Route[] = [
-  { path: 'students', component: StudentsResultComponent }
+  { path: 'students', component: StudentsResultComponent },
+  { path: 'students/:id', component: StudentDetailsComponent}
 ];
 
 @NgModule({
@@ -15,6 +17,6 @@ const STUDENTSROUTES: Route[] = [
     MaterialModule,
     RouterModule.forChild(STUDENTSROUTES)
   ],
-  declarations: [StudentsResultComponent]
+  declarations: [StudentsResultComponent, StudentDetailsComponent]
 })
 export class StudentsModule { }

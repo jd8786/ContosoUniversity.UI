@@ -26,9 +26,9 @@
     <ng-container matColumnDef="otherFunctions">
       <mat-header-cell *matHeaderCellDef></mat-header-cell>
       <mat-cell *matCellDef="let row">
-        <a color=" #3f51b5">Edit</a>
-        <a color=" #3f51b5">Details</a>
-        <a color="#3f51b5">Delete</a>
+        <a style="text-decoration:none">Edit</a>
+        <a style="text-decoration:none" [routerLink] = "[row.studentId]">Details</a>
+        <a>Delete</a>
       </mat-cell>
     </ng-container>
 
